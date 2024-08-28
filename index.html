@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Index - DevFolio Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* General body styling */
+      body {
+        font-family: 'Roboto', sans-serif;
+        color: #000000;
+        background: #0f0e0e;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header styling */
+      .header {
+        background: #000; /* Blackish background */
+        border-bottom: 3px solid #00796b;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 15px 0;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+        position: fixed; /* Fix header to top */
+        width: 100%; /* Full width */
+        top: 0; /* Align to top */
+        z-index: 1000; /* Ensure it sits above other content */
+      }
+
+
+      .logo h1.sitename {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        color: #ffffff; /* White text color */
+        margin: 0;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: color 0.3s ease, background 0.3s ease;
+      }
+
+      .logo h1.sitename:hover {
+        color: #e0e0e0; /* Light grey text color on hover */
+        background: #4c5150;
+      }
+
+      .navmenu {
+        border-radius: 20px;
+        transition: background 0.3s ease, box-shadow 0.3s ease; /* Invisible background */
+        box-shadow: none;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navmenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .navmenu ul li {
+        margin: 0 10px;
+        position: relative;
+      }
+
+      .navmenu ul li a {
+        text-decoration: none;
+        color: #ffffff; /* White text color */
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+        border: 2px solid transparent; /* Transparent border to maintain layout */
+      }
+
+      .navmenu ul li a:hover,
+      .navmenu ul li a.active {
+        color: #000000; /* Black text color on hover */
+        background: #e0e0e0; /* Greyish background on hover */
+        border-color: #e0e0e0; /* Greyish border on hover */
+        transform: scale(0.95); /* Reduce size slightly on hover */
+      }
+
+      .mobile-nav-toggle {
+        display: none; /* Hide by default */
+      }
+
+      @media (max-width: 991px) {
+        .mobile-nav-toggle {
+          display: block;
+          font-size: 1.5rem;
+          color: #ffffff; /* White icon color */
+        }
+      }
+
+      /* Hero Section styling */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        text-align: center;
+        color: #b94141;
+        border-radius: 0 0 30px 30px;
+      }
+
+      .hero-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      .hero h2 {
+        font-size: 3rem;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-top: 20px;
+      }
+
+      /* About Section styling */
+      .about {
+        padding: 60px 0;
+        background: #0a0a0a;
+        
+      }
+
+      .about-info {
+        background: #8f8a8a;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         background: #8f8a8a;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-img {
+        border-radius: 10px;
+      }
+
+      .skills-content {
+        margin-top: 40px;
+        background: #8f8a8a;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+      }
+
+      .skills-content h5 {
+        margin-bottom: 20px;
+        font-family: 'Poppins', sans-serif;
+        background: #8f8a8a;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       
+      }
+
+      .progress {
+        margin-bottom: 15px;
+      }
+
+      .skill {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        background: #8f8a8a;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+      }
+
+      .progress-bar-wrap {
+        background: #76c4fb;
+        border-radius: 20px;
+        height: 10px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        background: #00796b;
+        height: 100%;
+        transition: width 0.4s ease;
+      }
+
+      .progress-bar[role="progressbar"] {
+        transition: width 0.4s ease;
+      }
+      /* Black transparent background for specific sections */
+    .transparent-black-bg {
+       background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+       padding: 20px; /* Adjust padding as needed */
+      border-radius: 20px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for better separation */
+}
+
+    </style>
+  </head>  
+</head>  
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">DevFolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-img.jpg" alt="" data-aos="fade-in" class="hero-img" />
+
+      <div
+        class="container d-flex flex-column align-items-center justify-content-center text-center"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <h2>I am Swaraj</h2>
+        <p>
+          <span
+            class="typed"
+            data-typed-items="Entrepreneur, Developer, Youtuber"
+          ></span>
+        </p>
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img
+                  src="assets/img/profile-img.jpg"
+                  class="img-fluid profile-img"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-7 about-info">
+                <p><strong>Name: </strong> <span>Swaraj Ghalme</span></p>
+                <p>
+                  <strong>Profile: </strong> <span>Full Stack Developer</span>
+                </p>
+                <p>
+                  <strong>Email: </strong> <span>swarajghalme50@gmail.com</span>
+                </p>
+                <p><strong>Phone: </strong> <span>+91-9130194311</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+              <h5>Skills</h5>
+
+              <div class="progress">
+                <span class="skill">
+                  <span>HTML</span> <i class="val">100%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="100"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="width: 100%;"
+                  ></div>
+                </div>
+              </div>
+              <!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill">
+                  <span>CSS</span> <i class="val">90%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="width: 90%;"
+                  ></div>
+                </div>
+              </div>
+              <!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill">
+                  <span>JavaScript</span> <i class="val">75%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="width: 75%;"
+                  ></div>
+                </div>
+              </div>
+              <!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill">
+                  <span>Photoshop</span> <i class="val">55%</i>
+                </span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="55"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="width: 55%;"
+                  ></div>
+                </div>
+       </div>
+                      <!-- End Skills Item -->
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="about-me">
+                <h4>About me</h4>
+                <p>
+                  As a full-stack developer with hands-on experience, I've successfully completed several projects that showcase.
+                  my expertise in both front-end and back-end technologies. 
+                  My journey in software development has equipped me with a comprehensive understanding of building and deploying web applications from the ground up.
+                </p>
+                <p>
+                  Whether it's crafting responsive user interfaces or architecting efficient server-side logic, I bring a versatile skill set to the table. My passion for technology drives me to continuously improve and stay updated with the latest industry trends, ensuring that the solutions I develop are both innovative and reliable.
+                </p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+<!-- Resume Section -->
+<section id="resume" class="resume section transparent-black-bg">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Section</title>
+    <style>
+        /* Centering the button */
+        .resume-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Styling the button */
+        .resume-button {
+            background-color: #00796b;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-button:hover {
+            background-color: #005f56;
+        }
+    </style>
+</head>
+<body>
+    <section id="resume" class="resume section transparent-black-bg">
+        <!-- Section Title -->
+
+
+        <!-- Resume Button -->
+        <div class="resume-button-container">
+            <a href="https://drive.google.com/file/d/1QWYfnKqdJGGC-9U3oYjJsE8DntvIZe_A/view?usp=sharing" 
+               class="resume-button">
+                View Resume
+            </a>
+        </div>
+
+        <div class="container section-title" data-aos="fade-up">
+          <h2 style="color: #fff;"></h2>
+      </div>
+
+    </section>
+</body>
+
+  <!-- Section Title -->
+  <!--- <div  class="container section-title" data-aos="fade-up">
+    <h2 style="color: #fff;">Resume</h2>
+  </div>
+  
+  <!-- Resume Button 
+  <div class="container" data-aos="fade-up">
+    <a href="https://drive.google.com/file/d/1QWYfnKqdJGGC-9U3oYjJsE8DntvIZe_A/view?usp=sharing" target="_blank" style="text-decoration: none;">
+      <button style="background-color: #00796b; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+        View Resume
+      </button>
+    </a>
+  </div>-->
+
+
+  
+      </div>
+  <!-- End Section Title -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <!-- <h3 class="resume-title">Summary</h3> -->
+
+        <div class="resume-item pb-0">
+          <!-- Edn Resume Item -->
+
+          <h2 style="color: #fff;">Education</h2>
+          <div class="resume-item">
+            <h3><b style="color:#fff">About 10th and 12th Education</b></h3>
+
+            <p>
+              I completed my 10th and 12th grades under the Maharashtra State Board, securing an impressive 87% in my 10th exams and an outstanding 95.50% in my 12th exams. These academic achievements reflect my dedication and strong work ethic, laying a solid foundation for my further studies and career in software development.
+            </p>
+          </div>
+          <!-- Edn Resume Item -->
+
+          <div class="resume-item">
+            <h3><b style="color:#fff">Btech in Vellore Institute Of Technology</b></h3>
+            <h5 style="color:#fff">2021-2025</h5>
+            <h3><em style="color:#fff">Vellore Institute Of Technology, Vellore</em></h3>
+            <p>
+              Completing my B.Tech at Vellore Institute of Technology was a transformative journey filled with countless memories, both personal and academic. Over the years, I immersed myself in various projects, honed my technical skills, and embraced numerous challenges that shaped my problem-solving abilities. The vibrant campus life, the camaraderie with peers, and the mentorship from faculty all contributed to an environment that fostered growth and innovation. These experiences not only enriched my knowledge but also prepared me for the professional world, leaving me with a deep sense of accomplishment and a treasure trove of unforgettable moments.
+            </p>
+          </div>
+          <!-- Edn Resume Item -->
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <h3 style="color:#fff"><b>Professional Experience</b></h3>
+        <div class="resume-item">
+          <h2 style="color:#fff"><b>Internships/Externships</b></h2>
+          <h4 style="color:#fff" >Software Development Engineer Intern in URSC-ISRO</h4>
+          <h5>Period - Nov to Dec(2023)</h5>
+          <p><em>Bengaluru, Old-Airport Road</em></p>
+          <ul>
+            <li>
+              <b style="color:#fff">Project 1:</b> 3D Image/Object Visualization
+              • Developed Java application for real-time 3D visualization of images/objects captured by cameras.
+              • Optimized application performance and rendering quality using Java frameworks.
+            </li>
+            <li>
+              <b style="color:#fff">Project 2:</b> PKT File Enhancement
+              • Enhanced Java-based PKT file handling application with new features and improved parsing capabilities.
+              • Collaborated with the team to integrate user-requested functionalities, enhancing application usability.
+              • Conducted rigorous testing and documentation to ensure reliability and functionality.
+            </li>
+          </ul>
+
+          <h4 style="color:#fff">Web Services (AWS) | Amazon Cloud Practitioner</h4>
+          <h5>Period - Aug 2023 - Nov 2023 (Online)</h5>
+
+          <ul>
+            <li>
+              Explored cloud computing concepts like elasticity, scalability, reliability, AWS global infrastructure, and compliance frameworks. Gained hands-on experience with AWS services such as EC2, S3, and RDS through practical labs and exercises. Developed a solid understanding of cloud security, billing, and pricing models, preparing for entry-level roles in cloud computing.
+            </li>
+          </ul>
+
+          <h4 style="color:#fff">Google Cloud Digital Leader (CDL)</h4>
+          <h5>Period - Sep 2023 - Dec 2023 (Online)</h5>
+
+          <ul>
+            <li>
+              Gained hands-on experience with Google Cloud services including Cloud Shell, Kubernetes, Compute Engine, TensorFlow, and BigQuery.
+            </li>
+          </ul>
+        </div>
+        <!-- Edn Resume Item -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Resume Section -->
+
+<!-- Services Section -->
+<section id="services" class="services section transparent-black-bg">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2 style="color:#fff">Projects</h2>
+    <p>
+      "Crafted an innovative solution that seamlessly integrates cutting-edge technologies, transforming complex challenges into user-friendly, efficient applications."
+    </p>
+  </div>
+  <!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-activity"></i>
+          </div>
+          <a href="https://swarajghalme.github.io/Snake_Game/" class="stretched-link">
+            <h3><a href="https://swarajghalme.github.io/Snake_Game/" target="_blank">Snake Game</a></h3>
+          </a>
+          <p>
+            Developed a classic Snake Game using HTML, CSS, and JavaScript, bringing nostalgic gameplay to life with a modern, responsive design. The game features smooth animations, intuitive controls, and dynamic score tracking, offering an engaging and interactive experience for users of all ages.
+          </p>
+        </div>
+      </div>
+      <!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-broadcast"></i>
+          </div>
+          <a href="https://swarajghalme.github.io/Chat-Bot/" class="stretched-link">
+            <h3>Chat-Bot</h3>
+          </a>
+          <p>
+            Created an interactive chatbot using HTML, CSS, and JavaScript, designed to provide real-time, engaging conversations with users. The chatbot features a sleek, responsive interface and intelligent responses, making it a versatile tool for enhancing user experience on any website.
+          </p>
+        </div>
+      </div>
+      <!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-easel"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Expense Tracker App</h3>
+          </a>
+          <p>
+            Developed a comprehensive Expense Tracker app using full-stack technologies, enabling users to effortlessly manage and monitor their finances. The app features a user-friendly interface for logging expenses, real-time data visualization, and secure backend processing, providing a seamless and efficient way to stay on top of personal budgeting.
+          </p>
+        </div>
+      </div>
+      <!-- End Service Item -->
+    </div>
+  </div>
+</section>
+<!-- /Services Section -->
+
+<!-- Stats Section -->
+<section id="stats" class="stats section transparent-black-bg">
+  <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in" />
+
+  <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="250+"
+            data-purecounter-duration="0"
+            class="purecounter"
+            >250+</span
+          >
+          <p>Coding Questions</p>
+        </div>
+      </div>
+      <!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="5"
+            data-purecounter-duration="0"
+            class="purecounter"
+            >5</span
+          >
+          <p>Projects</p>
+        </div>
+      </div>
+      <!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="1"
+            data-purecounter-duration="0"
+            class="purecounter"
+            >1</span
+          >
+          <p>Internships</p>
+        </div>
+      </div>
+      <!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="3"
+            data-purecounter-duration="0"
+            class="purecounter"
+            >3</span
+          >
+          <p>Certificates</p>
+        </div>
+      </div>
+      <!-- End Stats Item -->
+    </div>
+  </div>
+</section>
+ <!-- FAQ Section -->
+<section id="faq" class="faq section" style="
+background: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+padding: 60px 0; /* Adjust padding as needed */
+color: #1c1b1b; /* Optional: Ensure text is readable */
+">
+<div class="container">
+  <div class="row gy-4">
+    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="content px-xl-5">
+        <h3 style="color:#fff">
+          <span>Frequently Asked </span><strong>Questions</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+      <div class="faq-container">
+        <div class="faq-item faq-active">
+          <h3>
+            <span class="num">1.</span>
+            <span>What's the latest on your educational journey?</span>
+          </h3>
+          <div class="faq-content">
+            <p>
+              I’m in my fourth year of studying Computer Science and Engineering at VIT Vellore, where I'm immersing myself in advanced tech and practical experience.
+            </p>
+          </div>
+          <i class="faq-toggle bi bi-chevron-right"></i>
+        </div>
+        <!-- End Faq item-->
+
+        <div class="faq-item">
+          <h3>
+            <span class="num">2.</span>
+            <span>Share some of the key projects you've worked on.</span>
+          </h3>
+          <div class="faq-content">
+            <p>
+              One of my main projects is an Expense Tracker app, developed using a full-stack approach to manage and analyze finances efficiently. Additionally, I’ve created a variety of engaging applications, including a calculator, a Snake game, and a Tic-Tac-Toe game, showcasing my versatility in coding and problem-solving.
+            </p>
+          </div>
+          <i class="faq-toggle bi bi-chevron-right"></i>
+        </div>
+        <!-- End Faq item-->
+
+        <div class="faq-item">
+          <h3>
+            <span class="num">3.</span>
+            <span>Have you completed any Internships?</span>
+          </h3>
+          <div class="faq-content">
+            <p>
+              Completed an internship at URSC-ISRO, where I gained valuable experience in space technology. Additionally, I pursued externships with Amazon Web Services as an Amazon Cloud Practitioner and with Google Cloud as a Digital Leader, enhancing my skills in cloud computing and digital solutions.
+            </p>
+          </div>
+          <i class="faq-toggle bi bi-chevron-right"></i>
+        </div>
+        <!-- End Faq item-->
+
+        <div class="faq-item">
+          <h3>
+            <span class="num">4.</span>
+            <span>What technical skills do you bring to the table?</span>
+          </h3>
+          <div class="faq-content">
+            <p>
+              My technical skills include proficiency in C, C++, and Java, along with full-stack development expertise in HTML, CSS, JavaScript, Bootstrap, MongoDB, ReactJS, and NodeJS.
+            </p>
+          </div>
+          <i class="faq-toggle bi bi-chevron-right"></i>
+        </div>
+        <!-- End Faq item-->
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- /Faq Section -->
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section accent-background">
+  <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="" />
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
+            <h3>Saul Goodman</h3>
+            <h4>Ceo &amp; Founder</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        <!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
+            <h3>Sara Wilsson</h3>
+            <h4>Designer</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        <!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
+            <h3>Jena Karlis</h3>
+            <h4>Store Owner</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        <!-- End testimonial item -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<!-- End Testimonials Section -->
+<!-- Contact Section -->
+<section id="contact" class="contact section" style="background: rgba(0, 0, 0, 0.5); color: #fff; padding: 60px 0;">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="section-title">
+          <h2 style="color:#fff">Contact Me</h2>
+          <p>
+            You can reach out to me using the contact form below or through the contact information provided. I'm looking forward to connecting with you!
+          </p>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-geo-alt"></i>
+          <h3>Address</h3>
+          <p> Maharashtra,Pune,414402</p>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-envelope"></i>
+          <h3>Email</h3>
+          <p>swarajghalme50@gmail.com</p>
+        </div>
+        <div class="info-item">
+          <i class="bi bi-phone"></i>
+          <h3>Phone</h3>
+          <p>+91-9130194311</p>
+        </div>
+      </div>
+      <style>
+        /* General form styling */
+        .form-control {
+          background-color: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          color: #fff;
+          border-radius: 8px;
+          padding: 12px;
+          transition: all 0.3s ease;
+        }
+    
+        .form-control:focus {
+          border-color: #00796b;
+          box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.2);
+          outline: none;
+        }
+    
+        /* Styling for the submit button */
+        .btn-submit {
+          background-color: #00796b;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+    
+        .btn-submit:hover {
+          background-color: #004d40;
+        }
+    
+        /* Optional: add a margin for form-group elements */
+        .form-group {
+          margin-bottom: 15px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <form action="" method="post" role="form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn-submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </body></section>
+<!-- End Contact Section -->
+
+<!-- Footer -->
+<footer id="footer" class="footer accent-background" style="background: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px 0;">
+  <div class="container">
+    <div class="copyright text-center">
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">Swaraj Ghalme</strong>
+        <span>All Rights Reserved</span>
+      </p>
+    </div>
+    <div class="social-links d-flex justify-content-center">
+      <!-- Footer <a href="" style="color: #fff;"><i class="bi bi-twitter-x"></i></a> -->
+      <a href="https://www.facebook.com/swaraj.ghalme/" style="color: #fff;"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/swaraj_ghalme/" style="color: #fff;"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/swaraj-ghalme-4b4023230/" style="color: #fff;"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <div class="credits">
+      Designed by
+      <a href="" style="color: #00796b;">Swaraj</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
